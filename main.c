@@ -21,21 +21,28 @@ double sin_taylor( double arg, int p){ /*funkcja obliczajaca wartosc sinusa z wz
 }/*sin_taylor*/
 
 int main(){
+	
+	int precision=0; 
 
 	for(;;){
 
+		printf("--------------------------------------\n");
 		printf("insert number like '0'.'0'\n");
-
+		printf("--------------------------------------\n");
 		scanf("%lf",&x);
-
-		printf("---------------------------\n");
+		printf("--------------------------------------\n");
+		printf("wpisz liczbe calkowita bedaca precyzja\n");
+		printf("--------------------------------------\n");
+		scanf("%d",&precision);
+		printf("--------------------------------------\n");
 		printf("sin(x) = %g\n",sin(x)); 
-		printf("---------------------------\n");
-		printf("taylor_sin(x) = %g\n",sin_taylor(x,3)); 
- 		printf("---------------------------\n"); 
-		e = fabs(sin(x)-sin_taylor(x,3));
+		printf("--------------------------------------\n");
+		printf("taylor_sin(x) = %g\n",sin_taylor(x,precision)); 
+ 		printf("--------------------------------------\n"); 
+		e = fabs(sin(x)-sin_taylor(x,precision));
 		printf("error value =%g\n",e);
- 		printf("---------------------------\n");
+ 		printf("--------------------------------------\n");
+
 	}/*for*/
 
 	return 0;
