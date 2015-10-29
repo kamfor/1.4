@@ -24,23 +24,50 @@ int main(){
 	
 	int precision=0; 
 
+	/*int i=0; 
+	for(x=-1.57;x<1.57;x+=0.1){
+	
+		printf("x = %g\n",x);
+	
+		for(i=0; i<20; i++){
+			
+			e = fabs(sin(x)-sin_taylor(x,i));
+			printf("sin(x)=%g sin_taylor(x)=%g blad=%g\n",sin(x),sin_taylor(x,i),e);
+		}
+	}*/
+	
+
 	for(;;){
 
 		printf("--------------------------------------\n");
-		printf("insert number like '0'.'0'\n");
+		printf("podaj liczbe w formacie 'x'.'x'\n");
 		printf("--------------------------------------\n");
-		scanf("%lf",&x);
+
+		if(scanf("%lf",&x)!=1){
+
+			printf("blad odczytu danych\n");
+			return 0; 
+		}
+
 		printf("--------------------------------------\n");
 		printf("wpisz liczbe calkowita bedaca precyzja\n");
 		printf("--------------------------------------\n");
-		scanf("%d",&precision);
+		
+		if(scanf("%d",&precision)!=1){
+
+			printf("blad odczytu danych\n");
+			return 0; 
+		}	
+			
 		printf("--------------------------------------\n");
 		printf("sin(x) = %g\n",sin(x)); 
 		printf("--------------------------------------\n");
 		printf("taylor_sin(x) = %g\n",sin_taylor(x,precision)); 
- 		printf("--------------------------------------\n"); 
+ 		printf("--------------------------------------\n");
+
 		e = fabs(sin(x)-sin_taylor(x,precision));
-		printf("error value =%g\n",e);
+
+		printf("blad jest rowny: %g\n",e);
  		printf("--------------------------------------\n");
 
 	}/*for*/
