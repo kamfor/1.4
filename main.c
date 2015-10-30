@@ -24,7 +24,7 @@ double sin_taylor( double arg, int p){ /*funkcja obliczajaca wartosc sinusa z wz
 
 int main(){
 	
-	int precision=0; 
+	int aprox=0; 
 
 	/*int i=0; 
 	for(x=-1.57;x<1.57;x+=0.1){
@@ -36,11 +36,11 @@ int main(){
 			e = fabs(sin(x)-sin_taylor(x,i));
 			printf("sin(x)=%g sin_taylor(x)=%g blad=%g\n",sin(x),sin_taylor(x,i),e);
 		}
-	}*/
+	}blok odpowiedzialny za wygenerowanie wartosci testowych znajdujacych sie w pliku tests.txt*/
 	
 
 	for(;;){
-
+ 
 		printf("--------------------------------------\n");
 		printf("podaj liczbe w formacie 'x'.'x'\n");
 		printf("--------------------------------------\n");
@@ -52,10 +52,10 @@ int main(){
 		}
 
 		printf("--------------------------------------\n");
-		printf("wpisz liczbe calkowita bedaca precyzja\n");
+		printf("wpisz rzad przybirzenia(l.calkowita)\n");
 		printf("--------------------------------------\n");
 		
-		if(scanf("%d",&precision)!=1){
+		if(scanf("%d",&aprox)!=1){
 
 			printf("blad odczytu danych\n");
 			return 0; 
@@ -64,10 +64,10 @@ int main(){
 		printf("--------------------------------------\n");
 		printf("sin(x) = %g\n",sin(x)); 
 		printf("--------------------------------------\n");
-		printf("taylor_sin(x) = %g\n",sin_taylor(x,precision)); 
+		printf("taylor_sin(x) = %g\n",sin_taylor(x,aprox)); 
  		printf("--------------------------------------\n");
 
-		e = fabs(sin(x)-sin_taylor(x,precision));
+		e = fabs(sin(x)-sin_taylor(x,aprox));
 
 		printf("blad jest rowny: %g\n",e);
  		printf("--------------------------------------\n");
