@@ -11,12 +11,14 @@ double sin_taylor( double arg, int p){ /*funkcja obliczajaca wartosc sinusa z wz
 	double temp = arg; /*tymczasowa zmienna stanowiaca dodatnia badz ujemna czesc sumy czescowej*/ 
 	int i=0;
   
-	for(i = 2; i < p; i+=2){/*petla wykonujaca sie p/2 razy zwiekszajaca licznik o 2*/
+	for(i = 2; i <2* p; i+=2){/*petla wykonujaca sie p/2 razy zwiekszajaca licznik o 2*/
 
 		temp=-temp*((arg2)/(i*(i+1))); /*poczatkowa wartosc argumentu domnazamy poprzez kolejne kwadraty i skladniki silni znak ujemny = -1^n*/
 		result+= temp; /*dodajemy do siebie kolejne wyniki mnozen aby uzyskac sume*/
  
 	}/*for*/
+	
+	return result; 
 	
 }/*sin_taylor*/
 
