@@ -25,6 +25,7 @@ double sin_taylor( double arg, int p){ /*funkcja obliczajaca wartosc sinusa z wz
 int main(){
 	
 	int aprox=0; 
+	char c=0; 
 
 	/*int i=0; 
 	for(x=-1.57;x<1.57;x+=0.1){
@@ -41,9 +42,9 @@ int main(){
 
 	for(;;){
  
-		printf("--------------------------------------\n");
+		printf("-----------------------------------------\n");
 		printf("podaj liczbe w formacie 'x'.'x'\n");
-		printf("--------------------------------------\n");
+		printf("-----------------------------------------\n");
 
 		if(scanf("%lf",&x)!=1){
 
@@ -51,9 +52,9 @@ int main(){
 			return 0; 
 		}
 
-		printf("--------------------------------------\n");
+		printf("-----------------------------------------\n");
 		printf("wpisz rzad przybirzenia(l.calkowita)\n");
-		printf("--------------------------------------\n");
+		printf("-----------------------------------------\n");
 		
 		if(scanf("%d",&aprox)!=1){
 
@@ -61,16 +62,21 @@ int main(){
 			return 0; 
 		}	
 			
-		printf("--------------------------------------\n");
+		printf("-----------------------------------------\n");
 		printf("sin(x) = %g\n",sin(x)); 
-		printf("--------------------------------------\n");
+		printf("-----------------------------------------\n");
 		printf("taylor_sin(x) = %g\n",sin_taylor(x,aprox)); 
- 		printf("--------------------------------------\n");
+ 		printf("-----------------------------------------\n");
 
 		e = fabs(sin(x)-sin_taylor(x,aprox));
 
 		printf("blad jest rowny: %g\n",e);
- 		printf("--------------------------------------\n");
+ 		printf("-----------------------------------------\n");
+		printf("k(enter) - kontynuuj, z(enter) - zakoncz'\n");
+ 
+		scanf(" %c",&c); 
+		if(c=='z')return 0; 
+
 
 	}/*for*/
 
